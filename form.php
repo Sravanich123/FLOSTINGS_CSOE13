@@ -29,7 +29,7 @@
         <div class="form_flex"><div class="div"><div class="item"><a>Item Name : </a><input type="text" name="item_name" required></div>
         <div class="item"><a>Found At : </a><input type="text" placeholder="Location" name="location" required></div>
        <div class="item"><a>Found On : </a><input type="date" name="date" id="datePicker" placeholder="Date" required></div></div>
-       <div class="div"><div class="item"><a>Upload Image : </a><input type="file" accept="Image/*" name="file" required></div>
+       <div class="div"><div class="item"><a>Upload Image : </a><?php echo cl_image_upload_tag('image_tag')?></div>
        
        <div class="item"><a>Email Address : </a><input type="email" name="email" required></div>
         <div class="item"><a>Phone Number : </a><input type="tel" name="phone_no" required></div></div></div>
