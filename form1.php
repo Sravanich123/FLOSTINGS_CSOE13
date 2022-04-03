@@ -1,8 +1,8 @@
 <?php
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//ini_set('display_startup_errors', 1);
+//error_reporting(E_ALL);
 
 include 'db.php';
 require 'vendor/autoload.php';
@@ -18,7 +18,7 @@ require 'config.php';
 
         $arr= \Cloudinary\Uploader::upload($_FILES["file"]["tmp_name"], array("public_id" => $file_name ));
         
-        print_r($arr['url']);
+        //print_r($arr['url']);
 
         $item_name = $_POST['item_name'];
         $location = $_POST['location'];
