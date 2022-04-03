@@ -16,7 +16,7 @@
 <body> 
     <ul>
         <li><a href="index.php"><i class="fa-solid fa-house">&nbsp;</i>Home</a></li>
-        <li><a href="form.html">Form page <i class="fa-solid fa-angle-right icon"></i></a></li>
+        <li><a href="form.php">Form page <i class="fa-solid fa-angle-right icon"></i></a></li>
    </ul>
   <form>
     <div id="search">
@@ -39,11 +39,8 @@
     ?>
 
     <section class="record">
-        <!-- <div class="record-arrow">
-            <i style="color: rgb(21, 170, 46);" class="fa-solid fa-check"></i>
-        </div> -->
         <div id="record1" class="record-display" >
-            <img src="<?php echo 'Images/'.$row[4];?>" style="width:230px;height:290px;object-fit:fill;" alt="image"/>
+            <img src="<?php echo $row[4];?>" style="width:230px;height:290px;object-fit:fill;" alt="image"/>
             <div class="btn" style="display:flex; justify-content:space-around;">
                 <a href = "mailto:<?php echo $row[5];?>">CONTACT</a>
                 <form id="<?php echo $row[0];?>" action="del.php" method="post">
