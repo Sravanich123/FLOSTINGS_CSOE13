@@ -18,7 +18,7 @@ require 'config.php';
 
         $arr= \Cloudinary\Uploader::upload($_FILES["file"]["tmp_name"], array("public_id" => $file_name ));
         
-        //print_r($arr['url']);
+        print_r($arr['url']);
 
         $item_name = $_POST['item_name'];
         $location = $_POST['location'];
@@ -26,7 +26,7 @@ require 'config.php';
         $email= $_POST['email'];
         $phone_no = $_POST['phone_no'];
         
-        $query = "INSERT INTO Images (Item_Name,Place,Found_on,Image_Name,Email,Phone_No) VALUES ('$item_name', '$location','$date','$arr["url"]','$email','$phone_no')";
+        $query = "INSERT INTO Images (Item_Name,Place,Found_on,Image_Name,Email,Phone_No) VALUES ('$item_name', '$location','$date','$arr[url]','$email','$phone_no')";
         $result=pg_query($con, $query);
         
         //XML File creation
