@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="form_styles.css">
+    <link rel="stylesheet" href="form.css">
     <link rel="shortcut icon" href="src/f.png">
     <script src="https://kit.fontawesome.com/57630a8715.js" crossorigin="anonymous"></script>
 </head>
