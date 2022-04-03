@@ -19,7 +19,7 @@ body{
   color: white;
 }
 .hero_image{
-  background-image: url("bg.png");
+  background-image: url("src/bg.png");
   height: 560px;
   background-position: center;
   background-repeat: no-repeat;
