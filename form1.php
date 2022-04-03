@@ -10,13 +10,13 @@ require 'config.php';
 
 //$target_dir="Images/";
    
-        $file_name = basename($_FILES["file"]["name"]);
+        $file_name = basename($_FILES["fileToUpload"]["name"]);
         // $target_file_path = $target_dir. $file_name;
         // move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file_path);
 
         //$cloudinary->uploadApi()->text($file_name);
 
-        $arr= \Cloudinary\Uploader::upload($_FILES["file"]["tmp_name"], array("public_id" => $file_name ));
+        $arr= \Cloudinary\Uploader::upload($_FILES["fileToUpload"]["tmp_name"], array("public_id" => $file_name ));
         
         print_r($arr['url']);
 
