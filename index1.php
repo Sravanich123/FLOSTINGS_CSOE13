@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/8f186daecf.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="src/f.png">
-    <title>Flostings_Items Page</title>
+    <title>Items Page</title>
     <link rel="stylesheet" href="admin_page.css">
 </head>
 
