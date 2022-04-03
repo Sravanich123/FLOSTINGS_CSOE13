@@ -14,9 +14,9 @@ require 'config.php';
         // $target_file_path = $target_dir. $file_name;
         // move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file_path);
 
-        $arr= $cloudinary->uploadApi()->text($file_name);
+        //$arr= $cloudinary->uploadApi()->text($file_name);
 
-        //$arr= \Cloudinary\Uploader::upload($_FILES["file"]["tmp_name"], array("public_id" => $file_name ));
+        $arr= \Cloudinary\Uploader::upload($_FILES["file"]["tmp_name"], array("public_id" => $file_name ));
         
         print_r($arr['url']);
 
