@@ -12,7 +12,7 @@
                 <i style="color: rgb(21, 170, 46);" class="fa-solid fa-check"></i>
             </div> -->
             <div id="record1" class="record-display" >
-                <img src="<?php echo 'Images/'.$row[4];?>" style="width:230px;height:290px;object-fit:fill;" alt="image"/>
+                <img src="<?php echo $row[4];?>" style="width:230px;height:290px;object-fit:fill;" alt="image"/>
                 <a href="#">CONTACT</a>
             </div>
             <div class="record-desc">
