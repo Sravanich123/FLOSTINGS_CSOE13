@@ -64,11 +64,24 @@
 
       <?php }}?>
 </div>
-
+<script src=
+    "https://smtpjs.com/v3/smtp.js">
+  </script>
 <script type="text/javascript">
 function del(x,y)
-{  
-    var email_id=prompt("Enter your Email id (of uploader):");
+{   
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "flostings@gmail.com",
+        Password: "flostings@123",
+        To: 'bhanavav0407@gmail.com',
+        From: "flostings@gmail.com",
+        Subject: "Sending Email using javascript",
+        Body: "Well that was easy!!",
+      })
+        .then(function (message) {
+         var email_id=prompt("OTP has been sent to your mail Id. Enter the OTP:");
+        });
     if(x==email_id)
     {   
         document.getElementById(y).submit();  
