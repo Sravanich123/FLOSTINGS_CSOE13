@@ -69,8 +69,8 @@
   </script>
 <script type="text/javascript">
 function del(x,y)
-{   
-    Email.send({
+{   if(confirm("Do u want to delete the Item?")) {
+     Email.send({
 	SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
         To: 'bhavanav0407@gmail.com',
         From: "flostings@gmail.com",
@@ -80,6 +80,7 @@ function del(x,y)
         .then(function (message) {
          var email_id=prompt("OTP has been sent to your mail Id. Enter the OTP:");
         });
+   }
     if(x==email_id)
     {   
         document.getElementById(y).submit();  
