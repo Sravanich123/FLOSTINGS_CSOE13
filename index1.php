@@ -71,7 +71,9 @@
 function del(x,y)
 {   
     Email.send({
-        SecureToken: "2af36e16-c5d8-4e06-982a-b2b4c2d9831a",
+        Host: "smtp.elasticemail.com",
+	    Username : "flostings@gmail.com",
+	    Password : "ACA4099A2181D04E5645716471CB447323A3",
         To: 'bhanavav0407@gmail.com',
         From: "flostings@gmail.com",
         Subject: "Sending Email using javascript",
