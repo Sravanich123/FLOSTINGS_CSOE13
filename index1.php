@@ -71,8 +71,8 @@
 function del(x,y)
 {   
     Email.send({
-	SecureToken : "bb218945-17b0-487f-a182-d5abadfd0776",
-        To: 'bhanavav0407@gmail.com',
+	SecureToken : "b5585b62-3e0b-4fef-8f66-d0f907efedc4",
+        To: 'bhavanav0407@gmail.com',
         From: "flostings@gmail.com",
         Subject: "Sending Email using javascript",
         Body: "Well that was easy!!",
