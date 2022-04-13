@@ -49,8 +49,8 @@
               </div>
               
               <section id="buttons">
-                <a href="form.html"><button id="btn1" class="btn">Found Something?</button></a>
-                <a href="index1.html"><button id="btn2" class="btn">Lost Something?</button></a>
+                <a href="form.php"><button id="btn1" class="btn">Found Something?</button></a>
+                <a href="index1.php"><button id="btn2" class="btn">Lost Something?</button></a>
             </section>
        
      
