@@ -77,7 +77,7 @@ function del(x,y)
         From: "flostings@gmail.com",
         Subject: "OTP From Flostings to Delete the Item.",
         Body: "Dear User, your OTP is : "+ otp,
-      }).then(
+      });
     var user_otp=prompt("OTP has been sent to your mail Id. Enter the OTP:");
     if(user_otp==otp)
     {   
@@ -87,7 +87,7 @@ function del(x,y)
     else
     {           
         alert("Incorrect OTP.");
-    });
+    }
    }
 }
   $(document).ready(function(){
