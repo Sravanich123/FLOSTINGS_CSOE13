@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="sample.css" />
+    <link rel="shortcut icon" href="src/f.png">
+    <title>Flostings</title>
+    <link rel="stylesheet" href="Home_page.css" />
 </head>
 <body>
     <section id="a1">
@@ -22,23 +23,23 @@
         <div class="slideshow-container">
 
             <div class="mySlides fade">
-              <img src="i1.jpg" style="height:35%">
+              <img src="src/i1.jpg" style="height:35%">
             </div>
             
             <div class="mySlides fade">
-              <img src="i2.jpg" style="height:35%">
+              <img src="src/i2.jpg" style="height:35%">
             </div>
             
             <div class="mySlides fade">
-              <img src="i3.jpg" style="height:35%">
+              <img src="src/i3.jpg" style="height:35%">
             </div>
 
             <div class="mySlides fade">
-                <img src="i4.jpg" style="height:35%">
+                <img src="src/i4.jpg" style="height:35%">
               </div>
 
               <div class="mySlides fade">
-                <img src="i5.jpg" style="height:35%">
+                <img src="src/i5.jpg" style="height:35%">
               </div>
             
             </div>
