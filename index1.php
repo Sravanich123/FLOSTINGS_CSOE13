@@ -75,8 +75,8 @@ function del(x,y)
 	SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
         To: x,
         From: "flostings@gmail.com",
-        Subject: "OTP tO Delete",
-        Body: "Your OTP is : "+ otp,
+        Subject: "OTP From Flostings to Delete the Item.",
+        Body: "Dear User, your OTP is : "+ otp,
       });
       var user_otp=prompt("OTP has been sent to your mail Id. Enter the OTP:");
     if(user_otp==otp)
