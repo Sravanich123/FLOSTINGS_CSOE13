@@ -1,28 +1,67 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flostings</title>
-    <link rel="shortcut icon" href="src/f.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Home_page.css">
-    <script src="https://kit.fontawesome.com/57630a8715.js" crossorigin="anonymous"></script>
+    <title>Homepage</title>
+    <link rel="stylesheet" href="sample.css" />
 </head>
 <body>
-    <ul>
-        <li><a href="form.php" style="text-decoration: none;">Form Page <i class="fa-solid fa-angle-right"></i></a></li>
-        <li><a href="index1.php" style="text-decoration: none;">View Items <i class="fa-solid fa-angle-right"></i></a></li>
-    </ul>
-    <div class="hero_image">
-        <div class="hero_text">
-            <h1>FLOSTINGS</h1>
-            <a id="subhead">Found or Lost Things</a><br>
-            <button onclick="window.location.href='form.php'">Found Something?</button>
-            <button onclick="window.location.href='index1.php'">Lost Something?</button></div>
-    </div>
+    <section id="a1">
+      <a href="index.html">
+         <section id="title">
+             <div id="h">FLOSTINGS</div>
+             <div id="subtitle">—Found or Lost Things—</div>
+         </section>
+      </a>
+    </section>
+    
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <img src="i1.jpg" style="height:35%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="i2.jpg" style="height:35%">
+            </div>
+            
+            <div class="mySlides fade">
+              <img src="i3.jpg" style="height:35%">
+            </div>
+
+            <div class="mySlides fade">
+                <img src="i4.jpg" style="height:35%">
+              </div>
+
+              <div class="mySlides fade">
+                <img src="i5.jpg" style="height:35%">
+              </div>
+            
+            </div>
+        
+
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+              </div>
+              
+              <section id="buttons">
+                <a href="form.html"><button id="btn1" class="btn">Found Something?</button></a>
+                <a href="index1.html"><button id="btn2" class="btn">Lost Something?</button></a>
+            </section>
+       
+     
+       
+     <script type="text/javascript" src="ex.js"></script>
+    
+   
+    
 </body>
 </html>
