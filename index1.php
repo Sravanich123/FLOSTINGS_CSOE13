@@ -69,7 +69,7 @@
   </script>
 <script type="text/javascript">
 function del(x,y)
-{   if(confirm("Do u want to delete the Item?")) {
+{   if(confirm("Do u want to delete the Item?")){
 	var otp=Math.floor((Math.random() * 8999) + 1000);
      Email.send({
 	SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
@@ -78,21 +78,16 @@ function del(x,y)
         Subject: "Sending Email using javascript",
         Body: "Your OTP is : "+ otp,
       });
-      var email_id=prompt("OTP has been sent to your mail Id. Enter the OTP:");
-   }
-    if(x==email_id)
+      var user_otp=prompt("OTP has been sent to your mail Id. Enter the OTP:");
+    if(user_otp==otp)
     {   
-        document.getElementById(y).submit();  
+        alert("Item Deleted Successfully.");  
     }
-    else if(email_id && email_id!=x && (email_id.includes("@")))
+    else
     {           
-        alert("You don't have access to delete this item. Only the uploader can delete.");
+        alert("Incorrect OTP.");
     }
-    else if(email_id)
-    {
-        alert("Please enter a valid email address!")
-    }
-    
+   }
 }
   $(document).ready(function(){
       $("#search_text").keypress(function(){
