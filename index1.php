@@ -73,7 +73,7 @@ function del(x,y)
 	var otp=Math.floor((Math.random() * 8999) + 1000);
      Email.send({
 	SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
-        To: 'bhavanav0407@gmail.com',
+        To: x,
         From: "flostings@gmail.com",
         Subject: "Sending Email using javascript",
         Body: "Your OTP is : "+ otp,
@@ -81,7 +81,8 @@ function del(x,y)
       var user_otp=prompt("OTP has been sent to your mail Id. Enter the OTP:");
     if(user_otp==otp)
     {   
-        alert("Item Deleted Successfully.");  
+        alert("Item Deleted Successfully.");
+	document.getElementById(y).submit(); 
     }
     else
     {           
