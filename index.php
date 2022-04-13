@@ -11,7 +11,7 @@
 </head>
 <body>
     <section id="a1">
-      <a href="index.html">
+      <a href="index.php">
          <section id="title">
              <div id="h">FLOSTINGS</div>
              <div id="subtitle">—Found or Lost Things—</div>
@@ -21,23 +21,18 @@
     
 
         <div class="slideshow-container">
-
             <div class="mySlides fade">
               <img src="src/i1.jpg" style="height:35%">
             </div>
-            
             <div class="mySlides fade">
               <img src="src/i2.jpg" style="height:35%">
             </div>
-            
             <div class="mySlides fade">
               <img src="src/i3.jpg" style="height:35%">
             </div>
-
             <div class="mySlides fade">
                 <img src="src/i4.jpg" style="height:35%">
               </div>
-
               <div class="mySlides fade">
                 <img src="src/i5.jpg" style="height:35%">
               </div>
