@@ -45,7 +45,17 @@
                 <a href = "mailto:<?php echo $row[5];?>">CONTACT</a>
                 <form id="<?php echo $row[0];?>" action="del.php" method="post">
                     <input style="display:none;" type="number" name="id" value="<?php echo $row[0];?>">
-                    <a onclick="del('<?php echo $row[5];?>',<?php echo $row[0];?>)"> <i title="Delete if the item was found" style="transform:none;" class="fa-solid fa-trash"></i></a>
+			<!--onclick="del('<?php echo $row[5];?>',<?php echo $row[0];?>)"-->
+                    <a onclick="openform()"> <i title="Delete if the item was found" style="transform:none;" class="fa-solid fa-trash"></i></a>
+		    <p id="bg" style="visibility:hidden;margin: 0%; background:rgb(57,43,87); padding: 50% 50%; position:absolute; opacity:40%;top:0"></p>
+		    <div class="popup">
+		    <form id="f">
+			<i href="#" class="close">&times</i>
+			<label  style="font-size: 20px" id="otp">Enter the OTP: </label><br>
+			<input class="input-box" id="otp" type="number">
+			<button>Verify</button>
+		    </form>
+		    </div>
                 </form>
                 
             </div>
@@ -68,7 +78,12 @@
     "https://smtpjs.com/v3/smtp.js">
   </script>
 <script type="text/javascript">
-function del(x,y)
+	function openform()
+        {   
+            document.getElementById('f').style.visibility='visible';
+            document.getElementById('bg').style.visibility='visible';
+        }
+/*function del(x,y)
 {   if(confirm("Do u want to delete the Item?")){
 	var otp=Math.floor((Math.random() * 8999) + 1000);
      Email.send({
@@ -89,7 +104,7 @@ function del(x,y)
         alert("Incorrect OTP.");
     }
    }
-}
+}*/
   $(document).ready(function(){
       $("#search_text").keypress(function(){
           $.ajax({
