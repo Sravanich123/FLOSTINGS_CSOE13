@@ -91,6 +91,8 @@ a:active{
     color: black;
 }
 @media (max-width: 480px) {
+  #a1{ text-align:center;
+   }
   #h{
     font-size: 35px;
   }
