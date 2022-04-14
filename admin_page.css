@@ -89,7 +89,7 @@ input{
     visibility: hidden;
     background-color: white;
 }
-form{
+#f{
     width:20%;
     background-color: white;
     display: flex;
@@ -110,7 +110,7 @@ form{
     width: 90%;
     outline: none;
 }
-form>button{
+#f>button{
     background-color: rgb(54, 54, 65);
     color: white;
     font-size: 20px;
