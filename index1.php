@@ -78,7 +78,7 @@ function del(x,y)
         Subject: "OTP From Flostings to Delete the Item.",
         Body: "Dear User, your OTP is : "+ otp,
       });
-    var user_otp=prompt("OTP has been sent to your mail Id. Enter the OTP:");
+    var user_otp=prompt("OTP has been sent to your mail Id (Please check in your spam also)."+"\n"+"Enter the OTP:");
     if(user_otp==otp)
     {   
         alert("Item Deleted Successfully.");
