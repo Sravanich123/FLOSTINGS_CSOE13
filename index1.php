@@ -43,8 +43,8 @@
             <img src="<?php echo $row[4];?>" style="width:230px;height:290px;object-fit:fill;" alt="image"/>
             <div class="btn" style="display:flex; justify-content:space-around;">
                 <a href = "mailto:<?php echo $row[5];?>">CONTACT</a>
-                
-	
+                <form id="<?php echo $row[0];?>" action="del.php" method="post">
+                    <input style="display:none;" type="number" name="id" value="<?php echo $row[0];?>">
                     <a onclick="openform()"> <i title="Delete if the item was found" style="transform:none;" class="fa-solid fa-trash"></i></a>
 		    <p id="bg" style="visibility:hidden;margin: 0%; background:rgb(57,43,87); padding: 50% 50%; position:absolute; opacity:40%;top:0"></p>
 		    <div class="popup">
@@ -55,8 +55,7 @@
 			<button>Verify</button>
 		    </form>
 		    </div>
-                
-                
+		 </form>
             </div>
         </div>
         <div class="record-desc">
