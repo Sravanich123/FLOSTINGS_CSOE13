@@ -101,6 +101,7 @@ a:active{
 }
   #subtitle{
     font-size: 13px;
+     margin:0;
   }
   .slideshow-container
    {margin-top: 12%;
