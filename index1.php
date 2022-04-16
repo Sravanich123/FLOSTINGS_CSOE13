@@ -45,17 +45,8 @@
                 <a href = "mailto:<?php echo $row[5];?>">CONTACT</a>
                 <form id="<?php echo $row[0];?>" action="del.php" method="post">
                     <input style="display:none;" type="number" name="id" value="<?php echo $row[0];?>">
-                    <a onclick="openform()"> <i title="Delete if the item was found" style="transform:none;" class="fa-solid fa-trash"></i></a>
-		    <p id="bg" style="visibility:hidden;margin: 0%; background:rgb(57,43,87); padding: 50% 50%; position:absolute; opacity:40%;top:0"></p>
-		    <div class="popup">
-		    <form id="f">
-			<i href="#" class="close">&times</i>
-			<label  style="font-size: 20px" id="otp">Enter the OTP: </label><br>
-			<input class="input-box" id="otp" type="number">
-			<button>Verify</button>
-		    </form>
-		    </div>
-		 </form>
+                </form>
+                <a onclick="del('<?php echo $row[5];?>',<?php echo $row[0];?>)"> <i title="Delete if the item was found" style="transform:none;" class="fa-solid fa-trash"></i></a>
             </div>
         </div>
         <div class="record-desc">
@@ -69,40 +60,50 @@
             <div>
         </div>
     </section>
-
       <?php }}?>
 </div>
-<script src=
-    "https://smtpjs.com/v3/smtp.js">
-  </script>
+<div id="bg" style="visibility:hidden; background:rgb(57,43,87); width:100%;height:100%; position:absolute; opacity:80%;top:0;"></div>
+    <div id="otppopup">
+    <div id="headings" style="display:flex;"><a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address.</a><i style="float:right;" onclick="closeform()" class="close">&times</i></div><br>   
+    <input id="otp" type="number" placeholder="Enter the OTP">
+    <small id="incorrectotp" style="color:red;"></small>
+    <button id="otpverify" onclick="otpverify()">Verify</button>
+    </div>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
-	function openform()
-        {   
-            document.getElementById('f').style.visibility='visible';
-            document.getElementById('bg').style.visibility='visible';
-        }
-/*function del(x,y)
-{   if(confirm("Do u want to delete the Item?")){
-	var otp=Math.floor((Math.random() * 8999) + 1000);
-     Email.send({
-	SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
+    var otp,user_otp;
+	function del(x,y)
+    { if(confirm("Do u want to delete the Item?")){
+	    otp=Math.floor((Math.random() * 8999) + 1000);
+        Email.send({
+	    SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
         To: x,
         From: "flostings@gmail.com",
         Subject: "OTP From Flostings to Delete the Item.",
         Body: "Dear User, your OTP is : "+ otp,
       });
-    var user_otp=prompt("OTP has been sent to your mail Id (Please check in your spam also)."+"\n"+"Enter the OTP:");
-    if(user_otp==otp)
-    {   
-        alert("Item Deleted Successfully.");
-	document.getElementById(y).submit(); 
-    }
-    else
-    {           
-        alert("Incorrect OTP.");
-    }
+    document.getElementById('otppopup').style.visibility='visible';
+    document.getElementById('bg').style.visibility='visible';
    }
-}*/
+   }
+   function closeform()
+    {   
+            document.getElementById('otppopup').style.visibility='hidden';
+            document.getElementById('bg').style.visibility='hidden';
+            document.getElementById('incorrectotp').innerHTML='';
+    }
+    function otpverify()
+    {   
+        user_otp=document.getElementById('otp').value;
+        if(user_otp!=otp){
+            document.getElementById('incorrectotp').innerHTML='Incorrect OTP'+'<br><br>';
+        }
+        else{
+            document.getElementById('incorrectotp').style.color='green';
+            document.getElementById('incorrectotp').innerHTML='Deleting the Item..'+'<br><br>';
+            document.getElementById(y).submit();
+        }    
+    }
   $(document).ready(function(){
       $("#search_text").keypress(function(){
           $.ajax({
@@ -121,8 +122,3 @@
     
 </body>
 </html>
-
-
-
-
-
