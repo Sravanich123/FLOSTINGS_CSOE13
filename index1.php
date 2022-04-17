@@ -65,7 +65,7 @@
 <div id="bg" style="visibility:hidden; background:rgb(57,43,87); width:100%;height:100%; position:absolute; opacity:80%;top:0;"></div>
     <div id="otppopup">
     <div id="headings" style="display:flex;">
-        <a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address.</a>
+        <a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address(Please check in your spam also).</a>
         <i style="float:right;" onclick="closeform()" class="close">&times</i>
     </div><br>  
     <input class="input-box" id="otp1" name="otp1" type="number" placeholder="Enter the OTP">
