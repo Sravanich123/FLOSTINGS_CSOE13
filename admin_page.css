@@ -25,13 +25,13 @@ li {
     padding: 20px 8px;
     margin-right: 13px;
 }
-ul a{
+.nav-items{
   padding: 7px 7px;
   font-size: 16px;
   letter-spacing: 0.08em;
   color: rgb(244, 236, 255);
 }
-ul a:hover {
+.nav-items:hover {
     background-color: rgba(43,47,87,80%);
     border-radius: 4px;
 }
@@ -50,24 +50,13 @@ ul a:hover {
     transition: box-shadow 300ms;
     margin: 20px 20px;
 }
-/*.record-arrow {
-    position: absolute;
-    width: 24px;
-    height: 30px;
-    transform: translate3d(10px,0px,0px);
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0px 0.5px 1px rgb(224, 223, 223);
-    transition: all 500ms ease-in-out;
-    text-align: center;
-    line-height: 30px;
-}*/
 
 #search{
   display: inline;
   margin-left: 3%;
   width:100%;
 }
-input{
+#search_text{
   padding: 8px 10px 8px 65px;
   font-size: 18px;
   border-radius: 15px;
@@ -79,46 +68,6 @@ input{
   min-width: 250px;
   font-family: PT Sans,sans-serif;
 }
-#otppopup{
-  position: absolute;
-  background-color: white;
-  visibility: hidden;
-  width:250px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding:35px;
-}
-#otpf{
-  display:flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-#otp{
-      font-size: 18px;
-      padding-bottom: 12px;
-      margin-bottom: 10px;
-      border: none;
-      border-bottom: 1px solid #ccc;
-      width: 90%;
-      outline: none;
-  }
-  #otpverify{
-      background-color: rgb(54, 54, 65);
-      color: white;
-      font-size: 20px;
-      width:90%;
-      padding: 10px 40px;
-      cursor: pointer;
-      margin-top: 4px;
-  }
-  .close{
-      font-size: 40px;
-      font-weight:900;
-      color: rgb(54, 41, 104);
-      cursor: pointer;
-  }
             
 #search i{
   position: relative;
@@ -129,19 +78,10 @@ input{
 #search i:hover{
   cursor: pointer;
 }
-/*.record:hover .record-arrow 
-{
-    transform: rotate(0.5turn);
-}
-.record:hover>div>i{
-  transform:rotate(0.5turn);
-}*/
+
 .record-display {
     width: 100%;
     height: 100%;
-    /* top: 0; */
-    /* background-size: cover;
-    background-position: center center; */
     text-align: center;
 }
 .record-desc {
@@ -182,15 +122,6 @@ p {
     align-items: center;
     
 }
-/* #record1 {
-  transition: height 30ms cubic-bezier(0.54, 0.21, 0.18, 1.35);
-} */
-/* #record2 {
-  transition: height 500ms cubic-bezier(0.54, 0.21, 0.18, 1.35);
-}
-#record3 {
-  transition: height 300ms cubic-bezier(0.54, 0.21, 0.18, 1.35);
-} */
 
 .record:hover .record-desc {
    top:0px;
@@ -216,23 +147,80 @@ img{
   justify-content: space-between;
   align-content: center;
 }
-a{  position: relative;
+#search_arrow{  position: relative;
     color:white;
     text-decoration: none;
     top:10px;
     cursor: pointer;
 }
-a:hover{
+#search_arrow:hover{
     font-size: 17px;
 }
 .btn a i:hover{
   font-size: 1.15rem;
 }
-i{
+#search_symbol{
     font-size: 1.1rem;
     color:white;
-    z-index: 20;
-  
+    z-index: 1;
 }
+#otppopup{
+  position: absolute;
+  background-color: white;
+  visibility: hidden;
+  width:30%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding:35px;
+  z-index:101;
+}
+#otpf{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+.input-box{
+      font-size: 18px;
+      padding-bottom: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      width: 90%;
+      outline: none;
+  }
+  #otpverify{
+      background-color: rgb(54, 54, 65);
+      color: white;
+      font-size: 20px;
+      width:90%;
+      padding: 10px 40px;
+      cursor: pointer;
+      margin-top: 4px;
+  }
+  .close{
+      font-size: 40px;
+      font-weight:900;
+      color: rgb(54, 41, 104);
+      cursor: pointer;
+  }
+  a{
+    position: relative;
+    color:white;
+    text-decoration: none;
+    top:10px;
+    cursor: pointer;
+  }
+  a:hover{
+    font-size: 18px;
+  }
+  #bg{
+    z-index: 100;
+  }
 
 
