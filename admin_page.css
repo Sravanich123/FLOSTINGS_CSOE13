@@ -168,7 +168,7 @@ img{
   position: absolute;
   background-color: white;
   visibility: hidden;
-  width:30%;
+  width:300px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
