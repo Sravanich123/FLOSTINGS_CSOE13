@@ -15,15 +15,15 @@
 
 <body> 
     <ul>
-        <li><a href="index.php"><i class="fa-solid fa-house">&nbsp;</i>Home</a></li>
-        <li><a href="form.php">Form page <i class="fa-solid fa-angle-right icon"></i></a></li>
+        <li><a class="nav-items"  href="index.php"><i class="fa-solid fa-house">&nbsp;</i>Home</a></li>
+        <li><a class="nav-items" href="form.php">Form page<i class="fa-solid fa-angle-right icon"></i></a></li>
    </ul>
   <form>
     <div id="search">
         <abbr title="Ctrl+Enter to search">
         <input type="search" id="search_text" placeholder="Search for an item">
         </abbr>
-        <a href="index1.php"><i onclick="search()" class="fa-solid fa-arrow-rotate-right"></i></a>
+        <a id="search_arrow" href="index1.php"><i id="search_symbol" onclick="search()" class="fa-solid fa-arrow-rotate-right"></i></a>
     </div>
   </form>   
 
@@ -64,16 +64,20 @@
 </div>
 <div id="bg" style="visibility:hidden; background:rgb(57,43,87); width:100%;height:100%; position:absolute; opacity:80%;top:0;"></div>
     <div id="otppopup">
-    <div id="headings" style="display:flex;"><a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address.</a><i style="float:right;" onclick="closeform()" class="close">&times</i></div><br>   
-    <input id="otp" type="number" placeholder="Enter the OTP">
+    <div id="headings" style="display:flex;">
+        <a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address.</a>
+        <i style="float:right;" onclick="closeform()" class="close">&times</i>
+    </div><br>  
+    <input class="input-box" id="otp1" name="otp1" type="number" placeholder="Enter the OTP">
     <small id="incorrectotp" style="color:red;"></small>
     <button id="otpverify" onclick="otpverify()">Verify</button>
     </div>
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script type="text/javascript">
-    var otp,user_otp;
+    var otp,user_otp,item_id;
 	function del(x,y)
-    { if(confirm("Do u want to delete the Item?")){
+    {   item_id=y;
+        if(confirm("Do u want to delete the Item?")){
 	    otp=Math.floor((Math.random() * 8999) + 1000);
         Email.send({
 	    SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
@@ -94,14 +98,15 @@
     }
     function otpverify()
     {   
-        user_otp=document.getElementById('otp').value;
+        user_otp=document.getElementById("otp1").value;
         if(user_otp!=otp){
-            document.getElementById('incorrectotp').innerHTML='Incorrect OTP'+'<br><br>';
+            document.getElementById('incorrectotp').innerHTML='Incorrect OTP' +'<br><br>';
         }
         else{
+            document.getElementById('incorrectotp').innerHTML='';
             document.getElementById('incorrectotp').style.color='green';
             document.getElementById('incorrectotp').innerHTML='Deleting the Item..'+'<br><br>';
-            document.getElementById(y).submit();
+            document.getElementById(item_id).submit();
         }    
     }
   $(document).ready(function(){
@@ -122,3 +127,8 @@
     
 </body>
 </html>
+
+
+
+
+
