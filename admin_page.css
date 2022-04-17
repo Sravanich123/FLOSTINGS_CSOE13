@@ -79,52 +79,46 @@ input{
   min-width: 250px;
   font-family: PT Sans,sans-serif;
 }
-.popup{
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    visibility: hidden;
-    background-color: white;
+#otppopup{
+  position: absolute;
+  background-color: white;
+  visibility: hidden;
+  width:250px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding:35px;
 }
-#f{
-    width:20%;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 40px;
-    align-items: center;
-    visibility: hidden;
-    justify-content: space-evenly;
+#otpf{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
 }
-.input-box{
-    font-size: 18px;
-    padding-bottom: 12px;
-    margin-bottom: 20px;
-    border-top : 0px ;
-    border-left: 0px;
-    border-right: 0px;
-    border-bottom: 1px solid #ccc;
-    width: 90%;
-    outline: none;
-}
-#f>button{
-    background-color: rgb(54, 54, 65);
-    color: white;
-    font-size: 20px;
-    width:90%;
-    padding: 10px 40px;
-}
-.close{
-    font-size: 40px;
-    font-weight:900;
-    color: rgb(54, 41, 104);
-    align-self: flex-end;
-    margin-right: 10px;
-    cursor: pointer;
-}
+
+#otp{
+      font-size: 18px;
+      padding-bottom: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      width: 90%;
+      outline: none;
+  }
+  #otpverify{
+      background-color: rgb(54, 54, 65);
+      color: white;
+      font-size: 20px;
+      width:90%;
+      padding: 10px 40px;
+      cursor: pointer;
+      margin-top: 4px;
+  }
+  .close{
+      font-size: 40px;
+      font-weight:900;
+      color: rgb(54, 41, 104);
+      cursor: pointer;
+  }
             
 #search i{
   position: relative;
