@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +11,7 @@
     <link rel="stylesheet" href="form.css">
     <link rel="shortcut icon" href="src/f.png">
     <script src="https://kit.fontawesome.com/57630a8715.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <?php
@@ -23,28 +23,93 @@
         <li><a href="index.php"><i class="fa-solid fa-house"></i> Home</a></li>
         <li><a href="index1.php" style="text-decoration: none;">Items page <i class="fa-solid fa-angle-right"></i></a></li>
     </ul>
-    <div id="thank-you-message"><p>Thank you for publishing the item. Redirecting you to items page in few seconds.....</p></div>
+    <div id="thank-you-message"><p>Email id has been verified. Thank you for publishing the item. Redirecting you to items page in few seconds.....</p></div>
     <h1>Fill the Details of Found Item</h1>
     <form action="form1.php" method="post" enctype="multipart/form-data">
-        <div class="form_flex"><div class="div"><div class="item"><a>Item Name : </a><input type="text" name="item_name" required></div>
-        <div class="item"><a>Found At : </a><input type="text" placeholder="Location" name="location" required></div>
-       <div class="item"><a>Found On : </a><input type="date" name="date" id="datePicker" placeholder="Date" required></div></div>
-       <div class="div"><div class="item"><a>Upload Image : </a><?php echo cl_image_upload_tag('image_tag')?></div>
-       
-       <div class="item"><a>Email Address : </a><input type="email" name="email" required></div>
-        <div class="item"><a>Phone Number : </a><input type="tel" name="phone_no" required></div></div></div>
-        <div class="button"><button type ="submit">Publish</button></div>
+        <div class="form_flex">
+            <div class="div">
+                <div class="item">
+                    <span>Item Name : </span>
+                    <input class="input1" type="text" name="item_name" required>
+                </div>
+                <div class="item">
+                    <span>Found At : </span>
+                    <input class="input1" type="text" placeholder="Location" name="location" required>
+                </div>
+                <div class="item">
+                    <span>Found On : </span>
+                    <input class="input1" type="date" name="date" id="datePicker" placeholder="Date" required>
+                </div>
+            </div>
+            <div class="div">
+                <div class="item">
+                    <span>Upload Image : </span>
+                      <?php echo cl_image_upload_tag('image_tag')?>
+                </div>
+                <div class="item">
+                    <span>Email Address : </span>
+                    <input class="input1" type="email" id="mail" name="email" required>
+                </div>
+                <div class="item">
+                    <span>Phone Number : </span>
+                    <input class="input1" type="tel" name="phone_no" required>
+                </div>
+            </div>
+        </div>
+        <div class="button"><button class="btn" type ="submit">Publish</button></div>
     </form>
-    <script>
+    <div id="bg" style="visibility:hidden; background:rgb(57,43,87); width:100%;height:100%; position:absolute; opacity:80%;top:0;"></div>
+    <div id="otppopup">
+        <div id="headings" style="display:flex;">
+            <a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address.</a>
+            <i style="float:right;" onclick="closeform()" class="close">&times</i>
+        </div>
+        <br>  
+        <input id="otp1" name="otp1" type="number" placeholder="Enter the OTP">
+        <small id="incorrectotp" style="color:red;"></small>
+        <button id="otpverify" onclick="otpverify()">Verify</button>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript">
         document.getElementById('datePicker').value = new Date().toISOString().substring(0, 10);
         document.getElementById('datePicker').max = new Date().toISOString().substring(0, 10);
         const form = document.querySelector('form');
         const thankYouMessage = document.querySelector('#thank-you-message');
         form.addEventListener('submit', (e) => {
         e.preventDefault();
-        thankYouMessage.classList.add('show');
-        setTimeout(() => form.submit(), 1200);
-    });
+        var x=document.getElementById('mail').value;
+	    otp=Math.floor((Math.random() * 8999) + 1000);
+        Email.send({
+	    SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
+        To: x,
+        From: "flostings@gmail.com",
+        Subject: "OTP From Flostings to Delete the Item.",
+        Body: "Dear User, your OTP is : "+ otp,
+        });
+            document.getElementById('otppopup').style.visibility='visible';
+            document.getElementById('bg').style.visibility='visible';
+        
+         });
+        function closeform()
+        {   
+            document.getElementById('otppopup').style.visibility='hidden';
+            document.getElementById('bg').style.visibility='hidden';
+            document.getElementById('incorrectotp').innerHTML='';
+        }
+        function otpverify()
+        {   
+            user_otp=document.getElementById("otp1").value;
+            if(user_otp!=otp){
+                document.getElementById('incorrectotp').innerHTML='Incorrect OTP' +'<br><br>';
+            }
+            else{
+                document.getElementById('otppopup').style.visibility='hidden';
+                document.getElementById('bg').style.visibility='hidden';
+                document.getElementById('incorrectotp').innerHTML='';
+                thankYouMessage.classList.add('show');
+                form.submit();  
+            }  
+        }  
     </script>
 </body>
 </html>
