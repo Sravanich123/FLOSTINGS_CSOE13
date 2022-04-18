@@ -20,10 +20,10 @@
     require 'vendor/autoload.php';
     require 'config.php';?>
     <ul>
-        <li><a href="index.php"><i class="fa-solid fa-house"></i> Home</a></li>
-        <li><a href="index1.php" style="text-decoration: none;">Items page <i class="fa-solid fa-angle-right"></i></a></li>
-    </ul>
-    <div id="thank-you-message"><p>Email id has been verified. Thank you for publishing the item. Redirecting you to items page in few seconds.....</p></div>
+        <li><a class="nav-items"  href="index.php"><i class="fa-solid fa-house">&nbsp;</i>Home</a></li>
+        <li><a class="nav-items" href="index1.php">View Items<i class="fa-solid fa-angle-right icon"></i></a></li>
+   </ul>
+    <div id="thank-you-message"><p>OTP has been verified. Thank you for publishing the item. Redirecting you to items page in few seconds.....</p></div>
     <h1>Fill the Details of Found Item</h1>
     <form action="form1.php" method="post" enctype="multipart/form-data">
         <div class="form_flex">
@@ -44,7 +44,7 @@
             <div class="div">
                 <div class="item">
                     <span>Upload Image : </span>
-                      <?php echo cl_image_upload_tag('image_tag')?>
+                     <input class="input1" type="file" name="file" accept="image/*" required>
                 </div>
                 <div class="item">
                     <span>Email Address : </span>
@@ -56,12 +56,12 @@
                 </div>
             </div>
         </div>
-        <div class="button"><button class="btn" type ="submit">Publish</button></div>
+        <div class="button"><button class="btn"  type ="submit">Publish</button></div>
     </form>
-    <div id="bg" style="visibility:hidden; background:rgb(57,43,87); width:100%;height:100%; position:absolute; opacity:80%;top:0;"></div>
-    <div id="otppopup">
+    <div id="bg" style="position: fixed;"></div>
+    <div id="otppopup" style="position: fixed;">
         <div id="headings" style="display:flex;">
-            <a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address.</a>
+            <a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the your email address.(Please check in your spam also)</a>
             <i style="float:right;" onclick="closeform()" class="close">&times</i>
         </div>
         <br>  
@@ -83,7 +83,7 @@
 	    SecureToken : "e4064595-4dbb-4d05-ad99-9c3a58e63396",
         To: x,
         From: "flostings@gmail.com",
-        Subject: "OTP From Flostings to Delete the Item.",
+        Subject: "OTP From Flostings to Publish the Item.",
         Body: "Dear User, your OTP is : "+ otp,
         });
             document.getElementById('otppopup').style.visibility='visible';
@@ -103,10 +103,13 @@
                 document.getElementById('incorrectotp').innerHTML='Incorrect OTP' +'<br><br>';
             }
             else{
-                document.getElementById('otppopup').style.visibility='hidden';
-                document.getElementById('bg').style.visibility='hidden';
-                document.getElementById('incorrectotp').innerHTML='';
-                thankYouMessage.classList.add('show');
+                document.getElementById('incorrectotp').style.color='green';
+                document.getElementById('incorrectotp').innerHTML='OTP has been verified. Thank you for publishing the item. Redirecting you to items page in few seconds.....' +'<br><br>';
+                //document.getElementById('otppopup').style.visibility='hidden';
+                //document.getElementById('bg').style.visibility='hidden';
+                //document.getElementById('incorrectotp').innerHTML='';
+                //thankYouMessage.classList.add('show');
+                //window.location.href='#thank-you-message'
                 form.submit();  
             }  
         }  
