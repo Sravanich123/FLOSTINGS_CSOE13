@@ -16,11 +16,11 @@ h1{
     margin-left:4%;
     margin-right:4%;
 }
-a{
+span{
     font-size: 20px;
     color: #282e44;
 }
-input{
+.input1{
     padding: 10px 20px;
     border: 1px solid rgb(124, 121, 121);
     border-radius: 4px;
@@ -42,7 +42,7 @@ input{
 .item{
     margin-bottom: 7%;
 }
-button{
+.btn{
     color:#f0fff1;
     background-color: #282e44;
     border: none;
@@ -51,10 +51,10 @@ button{
     margin-top:2%;
     margin-bottom: 2%;
 }
-button:hover{
+.btn:hover{
     background-color: #394161;
 }
-.button{
+.btn{
     display: flex;
     justify-content: center;
 }
@@ -121,3 +121,59 @@ ul {
         font-size: 17px;
     }
 }
+#otppopup{
+  position: absolute;
+  background-color: white;
+  visibility: hidden;
+  width:80vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding:35px;
+  z-index:101;
+}
+#otpf{
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#otp1{
+      font-size: 18px;
+      padding-bottom: 12px;
+      margin-bottom: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      width: 90%;
+      outline: none;
+  }
+  #otpverify{
+      background-color: rgb(54, 54, 65);
+      color: white;
+      font-size: 20px;
+      width:90%;
+      padding: 10px 40px;
+      cursor: pointer;
+      margin-top: 4px;
+  }
+  .close{
+      font-size: 40px;
+      font-weight:900;
+      color: rgb(54, 41, 104);
+      cursor: pointer;
+  }
+  a{
+    position: relative;
+    color:white;
+    text-decoration: none;
+    top:10px;
+    cursor: pointer;
+  }
+  a:hover{
+    font-size: 18px;
+  }
+  #bg{
+    z-index: 100;
+  }
+
+
