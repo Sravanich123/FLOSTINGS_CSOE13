@@ -62,8 +62,17 @@
     </section>
       <?php }}?>
 </div>
-<div id="bg" style="visibility:hidden; background:rgb(57,43,87); width:100%;height:100%; position:absolute; opacity:80%;top:0;"></div>
-    <div id="otppopup">
+<div id="bg" style="position: fixed;padding:0;
+  margin:0;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  visibility:hidden;
+  background:rgb(57,43,87);
+  opacity:80%;"></div>
+    <div id="otppopup" style="position: fixed;width:290px;">
     <div id="headings" style="display:flex;">
         <a style="font-size: 17.5px;float:left; color:rgb(57,43,87);" id="otp">OTP has been sent to the uploader's email address(Please check in your spam also).</a>
         <i style="float:right;" onclick="closeform()" class="close">&times</i>
@@ -127,8 +136,3 @@
     
 </body>
 </html>
-
-
-
-
-
